@@ -1,0 +1,13 @@
+{
+  "name": "hbt-framework",
+  "version": "1.0.0",
+  "dependencies": {
+    "gulp": "*",
+    "gulp-sass": "*",
+    "gulp-minify-css": "*",
+    "gulp-concat-css": "*",
+    "gulp-watch": "*",
+    "gulp-batch": "*",
+    "browser-sync": "*"
+  }
+}

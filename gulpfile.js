@@ -10,9 +10,12 @@ var browserSync = require('browser-sync');
 gulp.task('default', function() {
 
   browserSync.init({
-        server: {
-            baseDir: "./"
-        }
+        // server: {
+        //     baseDir: "./"
+        // }
+
+        //Change to localhost address
+        proxy: "localhost:80/melstar/layout.html"
     });
   
   watch('css/project/*.scss', batch(function (events, done) {
@@ -24,6 +27,12 @@ gulp.task('default', function() {
   watch('css/cache/conOutput/*.css', batch(function (events, done) {
         gulp.start('minify', done);
 
+    }));
+
+  watch('*.html', batch(function (events, done) {
+      console.log('#=>html');
+      return gulp.src('*.html')
+             .pipe(browserSync.reload({stream:true}));
     }));
 });
 
